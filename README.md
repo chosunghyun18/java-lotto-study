@@ -8,8 +8,9 @@
 
 ## 📮 미션 제출 방법
 
-- 미션 구현을 완료한 후 GitHub 주소를 디스 코드 과제 방에 업로드 한다.
-- ex 로또 과제 제출 합니다 : https://github.com/chosunghyun18/java-lotto
+- 미션 구현을 완료한 후 PR 을 보낸다.
+- 본인의 GitHub 주소를 디스 코드 과제 방에 업로드 한다.
+- ex 로또 과제 제출 합니다 : https://github.com/chosunghyun18/java-lotto-study
 
 ## 🚨 과제 제출 전 체크 리스트 - 0점 방지
 

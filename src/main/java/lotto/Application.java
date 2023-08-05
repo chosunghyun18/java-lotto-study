@@ -1,7 +1,18 @@
 package lotto;
 
+import lotto.view.OutputView;
+
+import lotto.domain.Shop;
+
 public class Application {
+
     public static void main(String[] args) {
-        // TODO: 프로그램 구현
+        Shop shop = new Shop();
+        try {
+            shop.buyLottos();
+            shop.checkResult();
+        } catch (IllegalArgumentException e) {
+            OutputView.showErrorMessage(String.valueOf(e));
+        }
     }
 }

@@ -81,7 +81,7 @@
 ### step 8 context map 작성 ###
 폴더구조
 ```
-├── lotto
+└── lotto
     ├── entrypoint // 어플리케이션 진입점
     │   └── Application.java
     ├── presentation // 표현 아키텍쳐
@@ -96,7 +96,11 @@
     │   │   └── LottoService.java
     │   ├── lottoResult
     │   │   └── LottoResultService.java
-    └── infra // 메모리에서 전부 처리되므로 레포지토리 생략
+    ├── infra // 메모리에서 전부 처리되므로 레포지토리 생략
+    ├── utils // 미정
+    ├── enums // 미정
+    └── constants
+        └── LottoConstants.java
 ```
 
 

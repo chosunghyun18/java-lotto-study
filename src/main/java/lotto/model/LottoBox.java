@@ -1,20 +1,20 @@
 package lotto.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 public class LottoBox {
     private final ArrayList<Lotto> lottoBox;
-    private static final Map<MatchResult, Integer> matchCount = Map.of(
-            MatchResult.THREE_MATCHES, 0,
-            MatchResult.FOUR_MATCHES, 0,
-            MatchResult.FIVE_MATCHES, 0,
-            MatchResult.SIX_MATCHES, 0,
-            MatchResult.FIVE_BONUS_MATCHES, 0
-    );
-
+    private Map<MatchResult, Integer> matchCount = new HashMap<>();
     public LottoBox(ArrayList<Lotto> lottoArrayList) {
         this.lottoBox = lottoArrayList;
+        matchCount.put(MatchResult.THREE_MATCHES, 0);
+        matchCount.put(MatchResult.FOUR_MATCHES, 0);
+        matchCount.put(MatchResult.FIVE_MATCHES, 0);
+        matchCount.put(MatchResult.SIX_MATCHES, 0);
+        matchCount.put(MatchResult.FIVE_BONUS_MATCHES, 0);
+        matchCount.put(MatchResult.NONE, 0);
     }
 
     public ArrayList<Lotto> getLottoBox() {
@@ -36,7 +36,7 @@ public class LottoBox {
             totalIncome += entry.getKey().getPrice() * entry.getValue();
         }
 
-        return Math.round((double) totalIncome/ lottoBox.size() *100) / 100.0 ;
+        return Math.round((double) totalIncome/ lottoBox.size() /10) / 100.0 ;
     }
 
 }

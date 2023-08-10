@@ -4,6 +4,10 @@ import lotto.model.Lotto;
 import lotto.model.LottoBox;
 import lotto.model.MatchResult;
 
+import java.util.Map;
+
+import static lotto.model.MatchResult.*;
+
 public class OutputView {
     public static void requestPrice() {
         System.out.println("구입 금액을 입력해 주세요");
@@ -31,11 +35,15 @@ public class OutputView {
         System.out.println("당첨 통계");
     }
 
-    public static void showStatistics(MatchResult matchResult, int count) {
-        System.out.println(matchResult.getText()+ " - " + count + "개");
+    public static void showStatistics(Map<MatchResult, Integer> result) {
+        System.out.println(THREE_MATCHES.getText()+ " - " + result.get(THREE_MATCHES) + "개");
+        System.out.println(FOUR_MATCHES.getText()+ " - " + result.get(FOUR_MATCHES) + "개");
+        System.out.println(FIVE_MATCHES.getText()+ " - " + result.get(FIVE_MATCHES) + "개");
+        System.out.println(SIX_MATCHES.getText()+ " - " + result.get(SIX_MATCHES) + "개");
+        System.out.println(FIVE_BONUS_MATCHES.getText()+ " - " + result.get(FIVE_BONUS_MATCHES) + "개");
     }
 
-    public static void showRevenue(int revenue) {
+    public static void showRevenue(double revenue) {
         System.out.println("총 수익률은 " + revenue + "%입니다.");
     }
 

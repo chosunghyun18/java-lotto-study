@@ -9,7 +9,7 @@ import java.util.List;
 import static lotto.constant.Constant.*;
 
 public class GenerateLotto {
-    private final List<List<Integer>> machineNumber;
+    private List<List<Integer>> machineNumber;
 
     public GenerateLotto(){
         this.machineNumber = new ArrayList<>();

@@ -3,6 +3,7 @@ package lotto.validate;
 public class Validate {
     //1000으로 나누어 떨어지는지 check
     public static int divideByThousand(int price){
+
         if(price < 0){
             throw new IllegalArgumentException("[ERROR] 0원 미만의 금액");
         }

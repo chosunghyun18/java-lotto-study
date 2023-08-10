@@ -13,6 +13,7 @@ public class InputView {
     public static int priceInputMessage(){
         System.out.println(PRICE_INPUT_MESSAGE);
         String price = Console.readLine();
+        System.out.println();
         return parseInt(price);
     }
 

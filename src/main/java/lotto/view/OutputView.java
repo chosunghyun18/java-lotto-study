@@ -12,7 +12,6 @@ public class OutputView {
         //'총 몇장을 구매 했습니다.'
         System.out.println(ticket+ PRICE_OUTPUT_MESSAGE);
         for(List<Integer> lottoNumbers: machineNumber){
-            Collections.sort(lottoNumbers);
             System.out.println(lottoNumbers);
         }
         System.out.println();

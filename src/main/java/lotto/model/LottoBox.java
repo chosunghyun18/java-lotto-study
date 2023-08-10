@@ -4,11 +4,9 @@ import java.util.ArrayList;
 
 public class LottoBox {
     private final ArrayList<Lotto> lottoBox;
-    private final int boxPrice;
 
-    public LottoBox(ArrayList<Lotto> lottoArrayList, int boxPrice) {
+    public LottoBox(ArrayList<Lotto> lottoArrayList) {
         this.lottoBox = lottoArrayList;
-        this.boxPrice = boxPrice;
     }
 
     public ArrayList<Lotto> getLottoBox() {
@@ -27,7 +25,4 @@ public class LottoBox {
         return Math.round(revenue * 100) / 100.0;
     }
 
-    public int getLottoCount() {
-        return boxPrice / 1000;
-    }
 }

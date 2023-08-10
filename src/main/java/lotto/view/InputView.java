@@ -12,9 +12,8 @@ public class InputView {
         // validate logic required
         // 1. 정수인지 판별
         // 2. 1000원으로 나누어떨어지는지 판별
-        int price = Integer.parseInt(input);
 
-        return price / 1000;
+        return Integer.parseInt(input);
     }
 
     public static ArrayList<Integer> inputWinningNumber() {

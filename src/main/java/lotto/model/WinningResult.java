@@ -7,5 +7,8 @@ public class WinningResult {
         this.result =
     }
 
-    private
+    private Result getResult(Lotto lotto, WinningNumbers winningNumbers) {
+        int match = 0;
+
+    }
 }

@@ -27,5 +27,4 @@ public class GenerateLotto {
     public List<List<Integer>> getMachineNumber(){
         return this.machineNumber;
     }
-
 }

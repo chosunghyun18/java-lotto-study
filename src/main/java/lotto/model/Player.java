@@ -24,6 +24,14 @@ public class Player {
         this.bonusNumber = bonusNumber;
     }
 
+    public int getBonusNumber(){
+        return bonusNumber;
+    }
+
+    public List<Integer> getPlayerNumber(){
+        return playerNumber;
+    }
+
     private void numberRepeat(int bonusNumber){
         if(this.playerNumber.contains(bonusNumber)){
             throw new IllegalArgumentException("[ERROR] 이미 로또에 존재하는 숫자임");
@@ -35,6 +43,5 @@ public class Player {
             throw new IllegalArgumentException("[ERROR] 1~45 사이의 정수가 아님");
         }
     }
-
 
 }

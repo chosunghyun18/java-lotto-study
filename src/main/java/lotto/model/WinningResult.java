@@ -4,24 +4,24 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class WinningResult {
-    private final Result result;
-    private static final int BONUS_NUMBER_MATCH_RESULT = -1;
-    private static final int BONUS_NUMBER_NOT_MATCH_RESULT = 5;
+    private final MatchResult matchResult;
+    private static final int BONUS_NUMBER_MATCH= -1;
+    private static final int BONUS_NUMBER_NOT_MATCH = 5;
 
-    private static final Map<Integer, Result> matchToResultMap = Map.of(
-            3, Result.THREE_MATCHES,
-            4, Result.FOUR_MATCHES,
-            5, Result.FIVE_MATCHES,
-            6, Result.SIX_MATCHES,
-            -1, Result.FIVE_BONUS_MATCHES
+    private static final Map<Integer, MatchResult> matchToResultMap = Map.of(
+            3, MatchResult.THREE_MATCHES,
+            4, MatchResult.FOUR_MATCHES,
+            5, MatchResult.FIVE_MATCHES,
+            6, MatchResult.SIX_MATCHES,
+            -1, MatchResult.FIVE_BONUS_MATCHES
     );
 
     private WinningResult(Lotto lotto, WinningNumbers winningNumbers) {
-        this.result = matchToResultMap.getOrDefault(getMatch(lotto, winningNumbers),Result.NONE);
+        this.matchResult = matchToResultMap.getOrDefault(getMatch(lotto, winningNumbers), MatchResult.NONE);
     }
 
-    private Result getResult() {
-        return result;
+    private MatchResult getResult() {
+        return matchResult;
     }
 
     private static int getMatch(Lotto lotto, WinningNumbers winningNumbers) {
@@ -40,9 +40,9 @@ public class WinningResult {
 
     private static int isBonusNumberMatch(Lotto lotto, WinningNumbers winningNumbers) {
         if (lotto.getNumbers().contains(winningNumbers.getBonusNumber())) {
-            return BONUS_NUMBER_MATCH_RESULT;
+            return BONUS_NUMBER_MATCH;
         }
-        return BONUS_NUMBER_NOT_MATCH_RESULT;
+        return BONUS_NUMBER_NOT_MATCH;
     }
 
 }

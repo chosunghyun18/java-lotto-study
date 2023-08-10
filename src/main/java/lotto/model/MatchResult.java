@@ -1,6 +1,6 @@
 package lotto.model;
 
-public enum Result {
+public enum MatchResult {
     THREE_MATCHES(3,"3개 일치 (5,000)원", 5000),
     FOUR_MATCHES(4, "4개 일치 (50,000원)", 50000),
     FIVE_MATCHES(5,"5개 일치 (1,500,000원)", 1500000),
@@ -12,7 +12,7 @@ public enum Result {
     private final String text;
     private final int price;
 
-    Result(int match, String text, int price) {
+    MatchResult(int match, String text, int price) {
         this.match = match;
         this.text = text;
         this.price = price;

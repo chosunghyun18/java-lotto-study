@@ -35,8 +35,9 @@ public class LottoBox {
         for (Map.Entry<MatchResult, Integer> entry : matchCount.entrySet()) {
             totalIncome += entry.getKey().getPrice() * entry.getValue();
         }
-
-        return Math.round((double) totalIncome/ lottoBox.size() /10) / 100.0 ;
+        int price = lottoBox.size() * 1000;
+        double revenue = (double) totalIncome / price;
+        return Math.round(revenue *10000) / 100.0;
     }
 
 }

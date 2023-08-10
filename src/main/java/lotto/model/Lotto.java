@@ -1,6 +1,9 @@
-package lotto;
+package lotto.model;
 
 import java.util.List;
+
+//default 생성자, 필드 추가 불가능
+//로또 번호 validate 측정하는 클래스
 
 public class Lotto {
     private final List<Integer> numbers;
@@ -17,4 +20,6 @@ public class Lotto {
     }
 
     // TODO: 추가 기능 구현
+
+
 }

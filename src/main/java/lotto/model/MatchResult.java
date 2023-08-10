@@ -18,15 +18,15 @@ public enum MatchResult {
         this.price = price;
     }
 
-    private int getMatch() {
+    public int getMatch() {
         return match;
     }
 
-    private String getText() {
+    public String getText() {
         return text;
     }
 
-    private int getPrice() {
+    public int getPrice() {
         return price;
     }
 }

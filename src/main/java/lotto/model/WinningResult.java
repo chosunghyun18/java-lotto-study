@@ -16,11 +16,11 @@ public class WinningResult {
             -1, MatchResult.FIVE_BONUS_MATCHES
     );
 
-    private WinningResult(Lotto lotto, WinningNumbers winningNumbers) {
+    public WinningResult(Lotto lotto, WinningNumbers winningNumbers) {
         this.matchResult = matchToResultMap.getOrDefault(getMatch(lotto, winningNumbers), MatchResult.NONE);
     }
 
-    private MatchResult getResult() {
+    public MatchResult getResult() {
         return matchResult;
     }
 

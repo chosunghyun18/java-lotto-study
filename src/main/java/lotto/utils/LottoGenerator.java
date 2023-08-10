@@ -14,7 +14,7 @@ public class LottoGenerator {
         return new Lotto(numbers.stream().sorted().collect(Collectors.toList()));
     }
 
-    public static LottoBox createLottoBox(int count) {
+    public static LottoBox generateLottoBox(int count) {
         ArrayList<Lotto> lottoBox = new ArrayList<>();
         for (int i = 0; i < count; i++) {
             lottoBox.add(generateLotto());

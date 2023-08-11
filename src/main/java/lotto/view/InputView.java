@@ -27,7 +27,7 @@ public class InputView {
                     .map(Integer::parseInt)
                     .collect(Collectors.toList());
         }catch(NumberFormatException e){
-            throw new IllegalArgumentException("[ERROR] 정수 형식이 아님");
+            throw new IllegalArgumentException("정수 형식이 아님");
         }
     }
 

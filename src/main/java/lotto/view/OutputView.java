@@ -2,7 +2,6 @@ package lotto.view;
 
 import lotto.model.Rate;
 
-import java.util.Collections;
 import java.util.List;
 
 import static lotto.constant.Constant.*;
@@ -35,5 +34,7 @@ public class OutputView {
     }
 
     //에러 메시지 출력
-
+    public static void printErrorMessage(String message){
+        System.out.println("[ERROR]" + message);
+    }
 }

@@ -26,15 +26,24 @@ public class LottoController {
     }
 
     public void startLotto() {
-        generateLotto.generateLottoNumber(this.ticket);
-        printLotto(generateLotto.getMachineNumber(), this.ticket);
-        player.setPlayerNumber(lottoInputMessage());    //로또 입력
-        player.setBonusNumber(bonusInputMessage());     //보너스 번호 입력
-        printResult();                                  //전체 결과 출력
+        try {
+            generateLotto.generateLottoNumber(this.ticket);
+            printLotto(generateLotto.getMachineNumber(), this.ticket);
+            player.setPlayerNumber(lottoInputMessage());    //로또 입력
+            player.setBonusNumber(bonusInputMessage());     //보너스 번호 입력
+            printResult();                                  //전체 결과 출력
+        }catch(IllegalArgumentException e){
+            printErrorMessage(String.valueOf(e));
+        }
     }
 
     private int priceToTicket(){
-        int price = priceInputMessage();
+        int price =0;
+        try {
+            price = priceInputMessage();
+        }catch(IllegalArgumentException e){
+            printErrorMessage(String.valueOf(e));
+        }
         return Validate.divideByThousand(price);
     }
 

@@ -18,11 +18,6 @@ public class LottoShop {
     static final int FiveMatchPrize = 1_500_000;
     static final int FiveAndBonusMatchPrize = 30_000_000;
     static final int SixMatchPrize = 2_000_000_000;
-    static final int ThreeMatchIndex = 0;
-    static final int FourMatchIndex = 1;
-    static final int FiveMatchIndex = 2;
-    static final int FiveAndBonusMatchIndex = 4;
-    static final int SixMatchIndex = 3;
     static final String MatchStatisticsInstruction = "당첨 통계\n---";
     static final String Unit = "개";
     static final String ThreeMatchInstruction = "3개 일치 (5,000원) - ";
@@ -102,24 +97,24 @@ public class LottoShop {
                 this.LottoResults[compareResult-LottoResultIndexShift] += One;
             }
             if (lottoSet.contains(this.targetNumbers.get(BonusNumberIndex)) && compareResult == LottoNumbers) {
-                this.LottoResults[SixMatchIndex] -= One;
-                this.LottoResults[FiveAndBonusMatchIndex] += One;
+                this.LottoResults[MatchIndex.SIX.ordinal()] -= One;
+                this.LottoResults[MatchIndex.FIVEANDBONUS.ordinal()] += One;
             }
         }
     }
 
     public void printLottoResults() {
-        float totalPrize = this.LottoResults[ThreeMatchIndex]*ThreeMatchPrize
-                +this.LottoResults[FourMatchIndex]*FourMatchPrize
-                +this.LottoResults[FiveMatchIndex]*FiveMatchPrize
-                +this.LottoResults[FiveAndBonusMatchIndex]*FiveAndBonusMatchPrize
-                +this.LottoResults[SixMatchIndex]*SixMatchPrize;
+        float totalPrize = this.LottoResults[MatchIndex.THREE.ordinal()]*ThreeMatchPrize
+                +this.LottoResults[MatchIndex.FOUR.ordinal()]*FourMatchPrize
+                +this.LottoResults[MatchIndex.FIVE.ordinal()]*FiveMatchPrize
+                +this.LottoResults[MatchIndex.FIVEANDBONUS.ordinal()]*FiveAndBonusMatchPrize
+                +this.LottoResults[MatchIndex.SIX.ordinal()]*SixMatchPrize;
         System.out.println(MatchStatisticsInstruction);
-        System.out.println(ThreeMatchInstruction + this.LottoResults[ThreeMatchIndex] + Unit);
-        System.out.println(FourMatchInstruction + this.LottoResults[FourMatchIndex] + Unit);
-        System.out.println(FiveMatchInstruction + this.LottoResults[FiveMatchIndex] + Unit);
-        System.out.println(FiveAndBonusMatchInstruction + this.LottoResults[FiveAndBonusMatchIndex] + Unit);
-        System.out.println(SixMatchInstruction + this.LottoResults[SixMatchIndex] + Unit);
+        System.out.println(ThreeMatchInstruction + this.LottoResults[MatchIndex.THREE.ordinal()] + Unit);
+        System.out.println(FourMatchInstruction + this.LottoResults[MatchIndex.FOUR.ordinal()] + Unit);
+        System.out.println(FiveMatchInstruction + this.LottoResults[MatchIndex.FIVE.ordinal()] + Unit);
+        System.out.println(FiveAndBonusMatchInstruction + this.LottoResults[MatchIndex.FIVEANDBONUS.ordinal()] + Unit);
+        System.out.println(SixMatchInstruction + this.LottoResults[MatchIndex.SIX.ordinal()] + Unit);
         System.out.println(ResultStartInstruction + Math.round(totalPrize/((float)amount)*100.0 * 100.0) / 100.0 + ResultEndInstruction);
     }
     public void lottoSales() {

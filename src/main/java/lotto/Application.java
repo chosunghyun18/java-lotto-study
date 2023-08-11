@@ -7,10 +7,10 @@ import lotto.domain.Shop;
 public class Application {
 
     public static void main(String[] args) {
-        Shop shop = new Shop();
         try {
+            Shop shop = Shop.visitShop();
             shop.buyLottos();
-            shop.checkResult();
+            shop.checkLottoResult();
         } catch (IllegalArgumentException e) {
             OutputView.showErrorMessage(String.valueOf(e));
         }

@@ -1,7 +1,7 @@
 package lotto.validate;
 
-import java.util.Set;
 import java.util.List;
+import java.util.Set;
 import java.util.HashSet;
 
 public class LottoValidate {

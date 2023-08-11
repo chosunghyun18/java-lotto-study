@@ -1,5 +1,7 @@
 package lotto.domain;
 
+import java.util.List;
+import java.util.Set;
 import lotto.validate.InputValidate;
 import lotto.validate.LottoValidate;
 import lotto.view.InputView;
@@ -8,7 +10,6 @@ import camp.nextstep.edu.missionutils.Console;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class WinnerLotto {
@@ -41,7 +42,7 @@ public class WinnerLotto {
         return Integer.parseInt(Console.readLine());
     }
 
-    public void matchWinnerLotto(List<Lotto> lottos) {
+    public void matchWinnerLotto(Set<Lotto> lottos) {
         for (Lotto userLotto : lottos) {
             ScoreBoard result = userLotto.matchNumbers(this.lotto, this.bonusNumber);
             scoreResult.put(result, scoreResult.getOrDefault(result, 0) + 1);
@@ -59,7 +60,7 @@ public class WinnerLotto {
     public List<Integer> lottoNumbersValidate(String givenNumbers) {
         List<String> givenNumberStrings = Arrays.asList(givenNumbers.split(","));
         List<Integer> checkedNumbers = inputValidate.inputNumbersIntegerValidate(
-            givenNumberStrings);
+                givenNumberStrings);
         LottoValidate.lottoNumbersRuleValidate(checkedNumbers);
         return checkedNumbers;
     }

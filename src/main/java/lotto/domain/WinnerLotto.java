@@ -3,7 +3,6 @@ package lotto.domain;
 import java.util.List;
 import java.util.Set;
 import lotto.validate.InputValidate;
-import lotto.validate.LottoValidate;
 import lotto.view.InputView;
 
 import camp.nextstep.edu.missionutils.Console;
@@ -34,7 +33,13 @@ public class WinnerLotto {
     public Lotto inputWinningNumber() {
         inputView.showInputLottoNumberMessage();
         String inputNumbers = Console.readLine();
-        return new Lotto(lottoNumbersValidate(inputNumbers));
+        List<Integer> validatedCompleteNumbers = winningNumbersValidate(inputNumbers);
+        return new Lotto(validatedCompleteNumbers);
+    }
+
+    private List<Integer> winningNumbersValidate(String givenNumbers) {
+        List<String> givenNumberStrings = Arrays.asList(givenNumbers.split(","));
+        return inputValidate.inputNumbersIntegerValidate(givenNumberStrings);
     }
 
     public Integer inputBonusNumber() {
@@ -44,7 +49,7 @@ public class WinnerLotto {
     }
 
     private Integer lottoBonusNumberValidate(String inputNumber) {
-        int givenNumber = Integer.parseInt(inputNumber);
+        int givenNumber = inputValidate.inputSingleNumberValidate(inputNumber);
         if (1 > givenNumber || givenNumber > 46) throw new IllegalArgumentException("입력 범위 밖.");
         if(this.winningNumber.existNumber(givenNumber)) throw new IllegalArgumentException("보너스 번호가 이미 당첨 번호에 있습니다.");
         return givenNumber ;
@@ -65,11 +70,4 @@ public class WinnerLotto {
         return ScoreBoard.calculatePrize(scoreResult);
     }
 
-    public List<Integer> lottoNumbersValidate(String givenNumbers) {
-        List<String> givenNumberStrings = Arrays.asList(givenNumbers.split(","));
-        List<Integer> checkedNumbers = inputValidate.inputNumbersIntegerValidate(
-                givenNumberStrings);
-        LottoValidate.lottoNumbersRuleValidate(checkedNumbers);
-        return checkedNumbers;
-    }
 }

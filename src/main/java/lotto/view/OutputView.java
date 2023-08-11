@@ -1,6 +1,7 @@
 package lotto.view;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class OutputView {
 
@@ -9,7 +10,7 @@ public class OutputView {
     }
 
     public void showLotto(List<Integer> lotto) {
-        System.out.println(lotto.toString());
+        System.out.println(lotto.stream().sorted().collect(Collectors.toList()));
     }
 
     public void showIncome(double rate) {

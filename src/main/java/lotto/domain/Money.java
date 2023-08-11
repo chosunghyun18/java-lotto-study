@@ -19,8 +19,7 @@ public class Money {
         this.inputValidate = new InputValidate();
     }
 
-    public void inputMoney() {
-        String input = Console.readLine();
+    public void inputMoney(String input) {
         Integer inputNumber = inputValidate.inputSingleNumberValidate(input);
         this.givenMoney = moneyValidate.checkMoneyValidate(inputNumber, UNIT);
     }

@@ -31,8 +31,7 @@ public class WinnerLotto {
     }
 
     public Lotto inputWinningNumber() {
-        inputView.showInputLottoNumberMessage();
-        String inputNumbers = Console.readLine();
+        String inputNumbers = inputView.showInputLottoNumberMessage();
         List<Integer> validatedCompleteNumbers = winningNumbersValidate(inputNumbers);
         return new Lotto(validatedCompleteNumbers);
     }
@@ -43,8 +42,7 @@ public class WinnerLotto {
     }
 
     public Integer inputBonusNumber() {
-        inputView.showInputBonusNumberMessage();
-        String inputNumber = Console.readLine();
+        String inputNumber = inputView.showInputBonusNumberMessage();
         return lottoBonusNumberValidate(inputNumber);
     }
 

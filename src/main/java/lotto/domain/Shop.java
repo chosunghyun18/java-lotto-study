@@ -31,8 +31,8 @@ public class Shop {
     }
 
     public void buyLottos() {
-        inputView.showInputMoneyMessage();
-        money.inputMoney();
+        String input = inputView.showInputMoneyMessage();
+        money.inputMoney(input);
         generateLottos(money.countQuantity());
     }
 

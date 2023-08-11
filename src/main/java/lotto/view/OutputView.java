@@ -10,7 +10,7 @@ public class OutputView {
     }
 
     public void showLotto(List<Integer> lotto) {
-        System.out.println(lotto.stream().sorted().collect(Collectors.toList()));
+        System.out.println(lotto);
     }
 
     public void showIncome(double rate) {

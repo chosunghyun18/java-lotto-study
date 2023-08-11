@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class WinnerLotto {
 
-    private Lotto lotto;
+    private Lotto winningNumber;
     private Integer bonusNumber;
     private final Map<ScoreBoard, Integer> scoreResult;
     private final InputView inputView;
@@ -27,24 +27,32 @@ public class WinnerLotto {
     }
 
     public void createWinnerLotto() {
-        this.lotto = new Lotto(inputWinnerLottoNumbers());
+        this.winningNumber = inputWinningNumber();
         this.bonusNumber = inputBonusNumber();
     }
 
-    public List<Integer> inputWinnerLottoNumbers() {
+    public Lotto inputWinningNumber() {
         inputView.showInputLottoNumberMessage();
         String inputNumbers = Console.readLine();
-        return lottoNumbersValidate(inputNumbers);
+        return new Lotto(lottoNumbersValidate(inputNumbers));
     }
 
     public Integer inputBonusNumber() {
         inputView.showInputBonusNumberMessage();
-        return Integer.parseInt(Console.readLine());
+        String inputNumber = Console.readLine();
+        return lottoBonusNumberValidate(inputNumber);
+    }
+
+    private Integer lottoBonusNumberValidate(String inputNumber) {
+        int givenNumber = Integer.parseInt(inputNumber);
+        if (1 > givenNumber || givenNumber > 46) throw new IllegalArgumentException("입력 범위 밖.");
+        if(this.winningNumber.existNumber(givenNumber)) throw new IllegalArgumentException("보너스 번호가 이미 당첨 번호에 있습니다.");
+        return givenNumber ;
     }
 
     public void matchWinnerLotto(Set<Lotto> lottos) {
         for (Lotto userLotto : lottos) {
-            ScoreBoard result = userLotto.matchNumbers(this.lotto, this.bonusNumber);
+            ScoreBoard result = userLotto.matchNumbers(this.winningNumber, this.bonusNumber);
             scoreResult.put(result, scoreResult.getOrDefault(result, 0) + 1);
         }
     }

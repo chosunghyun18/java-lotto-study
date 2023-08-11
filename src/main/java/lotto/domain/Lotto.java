@@ -25,14 +25,14 @@ public class Lotto {
     public Integer checkWinnerBaseNumbers(Lotto winnerLotto) {
         int countBaseNumber = 0;
         for (Integer number : this.numbers) {
-            if (winnerLotto.checkNumber(number)) {
+            if (winnerLotto.existNumber(number)) {
                 countBaseNumber += 1;
             }
         }
         return countBaseNumber;
     }
 
-    public Boolean checkNumber(Integer number) {
+    public Boolean existNumber(Integer number) {
         return this.numbers.contains(number);
     }
 }

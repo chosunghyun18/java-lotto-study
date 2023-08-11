@@ -77,7 +77,7 @@ public class LottoShop {
         System.out.println(BonusNumberInstruction);
         int bonusNumber = Integer.parseInt(Console.readLine());
         BonusNumberError BonusNumberErr = new BonusNumberError();
-        BonusNumberErr.BonusNumberCheck(bonusNumber);
+        BonusNumberErr.BonusNumberCheck(bonusNumber, this.targetNumbers);
         this.targetNumbers.add(bonusNumber);
     }
 

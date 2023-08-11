@@ -52,11 +52,17 @@ class TargetNumberError{
 }
 
 class BonusNumberError{
-    final String InvalidRangeOfNumberErrorString = "로또 번호는 1부터 45 사이의 숫자여야 합니다.";
+    final String InvalidRangeOfBonusNumberErrorString = "로또 번호는 1부터 45 사이의 숫자여야 합니다.";
+    final String InvalidBonusNumberErrorString = "보너스 번호는 당첨 번호들과 달라야 합니다.";
 
-    public void BonusNumberCheck(int BonusNumber) {
+    public void BonusNumberCheck(int BonusNumber, List<Integer> targetNumbers) {
         if (BonusNumber < LottoShop.LottoStartNumber || BonusNumber > LottoShop.LottoEndNumber) {
-            throw new IllegalArgumentException(InvalidRangeOfNumberErrorString);
+            throw new IllegalArgumentException(InvalidRangeOfBonusNumberErrorString);
+        }
+        Set<Integer> overlap = new HashSet<>(targetNumbers);
+        overlap.add(BonusNumber);
+        if (targetNumbers.size() == overlap.size()) {
+            throw new IllegalArgumentException(InvalidBonusNumberErrorString);
         }
     }
 }

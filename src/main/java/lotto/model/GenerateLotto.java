@@ -19,8 +19,9 @@ public class GenerateLotto {
     public void generateLottoNumber(int ticket){
         while(ticket-- > 0){
             List<Integer> numbers = Randoms.pickUniqueNumbersInRange(START_NUMBER, END_NUMBER, LOTTO_AMOUNT);
-            Collections.sort(numbers);
-            machineNumber.add(numbers);
+            List<Integer> mutableNumbers = new ArrayList<>(numbers);
+            Collections.sort(mutableNumbers);
+            this.machineNumber.add(mutableNumbers);
         }
     }
 

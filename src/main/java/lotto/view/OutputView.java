@@ -2,6 +2,7 @@ package lotto.view;
 
 import lotto.model.Rate;
 
+import java.util.Collections;
 import java.util.List;
 
 import static lotto.constant.Constant.*;
@@ -30,6 +31,9 @@ public class OutputView {
 
     //수익률 출력
     public static void printRate(double rate){
-        System.out.printf("총 수익률은 %.1f %%입니다.", rate);
+        System.out.printf("총 수익률은 %.1f%%입니다.", rate);
     }
+
+    //에러 메시지 출력
+
 }

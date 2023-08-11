@@ -83,6 +83,6 @@ public class LottoController {
 
     //수익률 계산
     private double calculateRate(int totalAmount){
-        return ((double)totalAmount/this.ticket*1000)*100;
+        return ((double)totalAmount/(this.ticket*1000))*100;
     }
 }

@@ -11,7 +11,7 @@ public class Application {
             Shop shop = Shop.visitShop();
             shop.buyLottos();
             shop.checkLottoResult();
-        } catch (IllegalArgumentException e) {
+        } catch (RuntimeException e) {
             OutputView.showErrorMessage(String.valueOf(e));
         }
     }

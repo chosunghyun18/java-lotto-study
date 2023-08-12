@@ -12,7 +12,7 @@ public class OutputView {
         System.out.println(lotto);
     }
 
-    public void showIncome(double rate) {
+    public void showIncomeRate(double rate) {
         System.out.println("총 수익률은 " + rate + "%입니다.");
     }
 

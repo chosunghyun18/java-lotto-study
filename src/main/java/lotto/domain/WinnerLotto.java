@@ -5,8 +5,6 @@ import java.util.Set;
 import lotto.validate.InputValidate;
 import lotto.view.InputView;
 
-import camp.nextstep.edu.missionutils.Console;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;

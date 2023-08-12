@@ -2,18 +2,15 @@ package lotto.domain;
 
 import lotto.validate.InputValidate;
 import lotto.validate.MoneyValidate;
-import lotto.view.OutputView;
 
 public class Money {
 
     private static final int UNIT = 1_000;
     private int givenMoney;
-    private final OutputView outputView;
     private final MoneyValidate moneyValidate;
     private final InputValidate inputValidate;
 
     public Money() {
-        this.outputView = new OutputView();
         this.moneyValidate = new MoneyValidate();
         this.inputValidate = new InputValidate();
     }
@@ -24,13 +21,10 @@ public class Money {
     }
 
     public int countQuantity() {
-        int quantity = (givenMoney / UNIT);
-        outputView.showQuantityMessage(quantity);
-        return quantity;
+        return (givenMoney / UNIT);
     }
 
-    public void showIncomeRate(Integer prize) {
-        double rate = (double) prize / givenMoney * (100);
-        outputView.showIncome(rate);
+    public double calculateIncomeRate(Integer prize) {
+        return (double) prize / givenMoney * (100);
     }
 }

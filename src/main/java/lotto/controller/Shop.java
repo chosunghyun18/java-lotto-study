@@ -36,14 +36,17 @@ public class Shop {
     public void buyLottos() {
         String input = inputView.showInputMoneyMessage();
         money.inputMoney(input);
-        generateLottos(money.countQuantity());
+        int quantity = money.countQuantity();
+        generateLottos(quantity);
+        outputView.showQuantityMessage(quantity);
     }
 
     public void checkLottoResult() {
         winnerLotto.createWinnerLotto();
         winnerLotto.matchWinnerLotto(lottos);
         winnerLotto.showResultBoard();
-        money.showIncomeRate(winnerLotto.calculatePrize());
+        int prize = winnerLotto.calculatePrize();
+        outputView.showIncomeRate(money.calculateIncomeRate(prize));
     }
 
     public void generateLottos(int quantityOfLotto) {

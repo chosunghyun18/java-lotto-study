@@ -1,4 +1,4 @@
-package lotto.domain;
+package lotto.controller;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Set;
 
 import java.util.stream.Collectors;
+import lotto.domain.Lotto;
+import lotto.domain.Money;
+import lotto.domain.WinnerLotto;
 import lotto.view.InputView;
 import lotto.view.OutputView;
 

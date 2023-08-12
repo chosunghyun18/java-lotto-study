@@ -2,7 +2,7 @@ package lotto;
 
 import lotto.view.OutputView;
 
-import lotto.domain.Shop;
+import lotto.controller.Shop;
 
 public class Application {
 

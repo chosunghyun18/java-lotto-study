@@ -1,6 +1,5 @@
 package lotto.domain;
 
-import camp.nextstep.edu.missionutils.Console;
 import lotto.validate.InputValidate;
 import lotto.validate.MoneyValidate;
 import lotto.view.OutputView;
